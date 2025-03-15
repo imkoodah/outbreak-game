@@ -1,9 +1,10 @@
 export default function Home() {
   return (
       <main className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-6">Getting Started</h1>
+          <h1 className="text-4xl font-bold mb-6">Welcome to Outbreak*!</h1>
           <p className="text-xl mb-4">
-              So far, there isn&#39;t anything to get started on. Please look at systems to understand everything the game has to offer.
+              This is a documentation page for our game. Please feel free to look through it to understand how the game works and the systems we would like to put
+              in place.
           </p>
 
           <pre className="bg-muted p-4 rounded-md mb-4">

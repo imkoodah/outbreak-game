@@ -53,6 +53,9 @@ export function AppSidebar() {
                   <div className="bg-primary text-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                     <GalleryVerticalEnd className="size-4" />
                   </div>
+                  <div className="flex flex-col gap-0.5 leading-none">
+                    <span className="font-semibold">Game Docs</span>
+                  </div>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -73,15 +76,17 @@ export function AppSidebar() {
           </div>
         </SidebarHeader>
         <SidebarContent>
-          {navItems.map((section) => (
-              <SidebarGroup key={section.category}>
-                <SidebarGroupLabel>{section.category}</SidebarGroupLabel>
+          {navItems.map((section, index) => (
+              <SidebarGroup key={section.category} className={index < navItems.length - 1 ? "pb-4 border-b border-border" : ""}>
+                <SidebarGroupLabel className="items-center justify-center" >
+                  {section.category}
+                </SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {section.items.map((item) => (
                         <SidebarMenuItem key={item.url}>
                           <SidebarMenuButton asChild isActive={pathname === item.url}>
-                            <Link href={item.url}>{item.title}</Link>
+                            <Link href={item.url}><b>{item.title}</b></Link>
                           </SidebarMenuButton>
                         </SidebarMenuItem>
                     ))}
