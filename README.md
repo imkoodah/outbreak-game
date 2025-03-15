@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Step 1: Setup
 
-## Getting Started
+Run commands in CLI in order.
 
-First, run the development server:
+1. `git remote add origin https://github.com/imkoodah/outbreak-game.git`
+2. `git pull origin master`
+3. `npm install`
+4. `npm run dev`
+5. Navigate to `http://localhost:3000`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+If it works perfectly, you can go ahead and move on to step 2.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Step 2: Making changes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you want to make changes, you can follow the example below.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Navigate to the `app` directory.
+2. Open up the directory you wish to make changes to.
+3. If you wish to create a new system, create a directory in the `systems` directory.
+4. Go ahead and create a `page.tsx` file in that new directory.
+5. Follow the same structure as the other files in the parent directory. Example: Follow the same `page.tsx` as the others in the `systems` directory.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After that, submit a PR and it will be reviewed.
