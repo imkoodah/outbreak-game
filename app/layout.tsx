@@ -8,8 +8,8 @@ import { AppSidebar } from "@/components/app-sidebar"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "File Dropper App Documentation",
-  description: "A simple file dropper application",
+  title: "Game Documentation",
+  description: "Documentation for the game",
 }
 
 export default function RootLayout({
