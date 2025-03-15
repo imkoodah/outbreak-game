@@ -7,9 +7,7 @@ export default function GettingStarted() {
       </p>
 
       <pre className="bg-muted p-4 rounded-md mb-4">
-        <code>{`
-        print("Hello World!")
-        `}</code>
+        <code>{`print("Hello World!")`}</code>
       </pre>
     </main>
   )

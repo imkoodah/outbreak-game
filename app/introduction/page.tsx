@@ -7,10 +7,8 @@ export default function Home() {
           </p>
 
           <pre className="bg-muted p-4 rounded-md mb-4">
-        <code>{`
-        print("Hello World!")
-        `}</code>
-      </pre>
+              <code>{`print("Hello World!")`}</code>
+          </pre>
       </main>
   )
 }

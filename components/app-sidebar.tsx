@@ -38,7 +38,6 @@ const navItems = [
       { title: "API Reference", url: "/documentation/api-reference" },
     ],
   },
-
 ]
 
 export function AppSidebar() {
