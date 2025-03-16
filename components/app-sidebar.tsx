@@ -15,10 +15,28 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton
 } from "@/components/ui/sidebar"
-import { ThemeToggle } from "@/components/theme-toggle"
 
-const navItems = [
+interface SubItem {
+  title: string
+  url: string
+}
+
+interface NavItem {
+  title: string
+  url: string
+  subitems?: SubItem[]
+}
+
+interface NavCategory {
+  category: string
+  items: NavItem[]
+}
+
+const navItems: NavCategory[] = [
   {
     category: "Introduction",
     items: [
@@ -29,7 +47,13 @@ const navItems = [
   {
     category: "Systems",
     items: [
-      { title: "Parkour System", url: "/systems/parkour-system" }
+      {
+        title: "Parkour System",
+        url: "/systems/parkour-system",
+        subitems: [
+          { title: "Sprinting", url: "/systems/parkour-system/sprinting" },
+        ],
+      },
     ],
   },
   {
@@ -43,6 +67,7 @@ const navItems = [
 export function AppSidebar() {
   const pathname = usePathname()
 
+  // @ts-ignore
   return (
       <Sidebar>
         <SidebarHeader>
@@ -71,9 +96,6 @@ export function AppSidebar() {
               </SidebarGroupContent>
             </SidebarGroup>
           </form>
-          <div className="px-4 py-2">
-            <ThemeToggle />
-          </div>
         </SidebarHeader>
         <SidebarContent>
           {navItems.map((section, index) => (
@@ -85,9 +107,27 @@ export function AppSidebar() {
                   <SidebarMenu>
                     {section.items.map((item) => (
                         <SidebarMenuItem key={item.url}>
-                          <SidebarMenuButton asChild isActive={pathname === item.url}>
+                          <SidebarMenuButton
+                              asChild
+                              isActive={pathname === item.url}
+                              className="hover:bg-muted/50 transition-colors"
+                          >
                             <Link href={item.url}><b>{item.title}</b></Link>
                           </SidebarMenuButton>
+                          {item.subitems && item.subitems.length > 0 && (
+                              <SidebarMenuSub className="mt-1 border-l-2">
+                                {item.subitems.map((subitem: any) => (
+                                    <SidebarMenuSubItem key={subitem.url}>
+                                      <SidebarMenuSubButton
+                                          asChild
+                                          className="hover:bg-muted/50 transition-colors"
+                                      >
+                                        <Link href={subitem.url}>{subitem.title}</Link>
+                                      </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                ))}
+                              </SidebarMenuSub>
+                          )}
                         </SidebarMenuItem>
                     ))}
                   </SidebarMenu>
